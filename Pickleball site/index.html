@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Isabel Dinker’s Club</title>
+    <link
+        rel="canonical"
+        href="https://getbootstrap.com/docs/5.3/examples/footers/"
+      />
+    <meta name="description" content="Create a pickleball tournament, manage teams, and run a live single-elimination bracket.">
+    <link rel="icon" type="idc_logo2.png" href="idclogo2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="assets/js/color-modes.js"></script>
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .bracket-wrap,
+      .bracket-wrap p,
+      .bracket-wrap h3,
+      .bracket-wrap div,
+      .sidebar,
+      .sidebar h2,
+      .sidebar .label,
+      .sidebar .hint,
+      .sidebar .count,
+      .toolbar,
+      .toolbar button,
+      .toolbar h2,
+      .toolbar p {
+        color: #000;
+      }
+      .sidebar button{
+        color: #315944;
+        background: #e6f0de;
+        font-weight: 500;
+      }
+      .standings-scroll {
+        width: 100%;
+        overflow-x: auto;
+        margin: 0 0 26px;
+      }
+
+      .standings {
+        width: 100%;
+        min-width: 440px;
+        border-collapse: collapse;
+      }
+
+      .standings th,
+      .standings td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid #e7eee5;
+      }
+    </style>
+    <meta name="theme-color" content="#c9c8cc" />
+    <style></style>
+    <!-- <style>
+      :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:#17251e;background:#f5f7f1}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}header{background:#080808;display:flex;justify-content:center;align-items:center;padding:12px 18px}.header-logo{display:block;width:100%;max-width:960px;height:auto;object-fit:contain}main{max-width:1500px;margin:auto;padding:32px clamp(18px,4vw,62px) 65px}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#42725b;margin:0 0 8px}.title-row{display:flex;align-items:end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:27px}h1{font-size:clamp(2rem,4vw,3.45rem);letter-spacing:-.07em;line-height:1.05;margin:0}h2{font-size:1.15rem;letter-spacing:-.03em;margin:0}p{line-height:1.5}.sub{color:#65746b;margin:9px 0 0}.pill{background:#e6f0de;color:#315944;border-radius:100px;padding:9px 14px;font-weight:700;font-size:.85rem}.layout{display:grid;grid-template-columns:minmax(290px,350px) minmax(0,1fr);gap:21px;align-items:start}.panel{background:#fff;border:1px solid #e0e7db;border-radius:18px;box-shadow:0 8px 30px rgba(22,53,37,.04)}.sidebar{padding:23px}.sidebar section+section{border-top:1px solid #edf0e8;margin-top:25px;padding-top:24px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:17px}.count{background:#eef3ea;border-radius:50px;padding:4px 10px;color:#54705b;font-size:.8rem;font-weight:800}.label{display:block;font-size:.85rem;font-weight:750;margin:14px 0 7px}input[type=text]{width:100%;padding:12px 13px;border:1px solid #d8e1d5;border-radius:10px;background:#fcfdfb;color:#17251e;outline:none}input:focus{border-color:#499769;box-shadow:0 0 0 3px #49976926}.btn{border:0;border-radius:10px;background:#d4ef5b;color:#173020;padding:11px 16px;font-weight:800;min-height:43px}.btn:hover:not(:disabled){background:#c6e647}.btn-dark{background:#15382b;color:#fff}.btn-dark:hover:not(:disabled){background:#26543b}.btn-outline{border:1px solid #cfdbcc;background:white;color:#2e5940}.btn-outline:hover:not(:disabled){background:#f1f6ed}.full{width:100%;margin-top:13px}.hint{font-size:.84rem;color:#738177;margin:9px 0 0}.teams{list-style:none;margin:0;padding:0;display:grid;gap:8px}.team{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid #edf0e9;border-radius:9px;font-size:.92rem}.seed{color:#729078;font-size:.76rem;font-weight:800;width:19px}.team-name{flex:1;overflow-wrap:anywhere}.remove{background:transparent;border:0;color:#8b9c90;font-size:1.25rem;line-height:1;padding:0 4px}.remove:hover{color:#c64949}.main-panel{min-width:0;overflow:hidden}.toolbar{padding:23px 25px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-bottom:1px solid #e8ede5}.toolbar p{margin:6px 0 0;color:#708076;font-size:.87rem}.toolbar-actions{display:flex;gap:8px;flex-wrap:wrap}.bracket-wrap{overflow-x:auto;padding:27px 25px 32px;min-height:430px}.bracket{display:flex;gap:25px;align-items:stretch;min-width:max-content}.round{width:240px;display:flex;flex-direction:column;gap:14px}.round-title{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:#658371;padding:0 3px 3px}.round-list{display:flex;flex:1;flex-direction:column;justify-content:space-around;gap:18px}.match{border:1px solid #dfe8da;border-radius:13px;overflow:hidden;background:white;box-shadow:0 3px 12px #163c1809}.match-label{font-size:.72rem;color:#728379;background:#f7faf4;padding:8px 12px;border-bottom:1px solid #edf1ea;font-weight:700}.side{display:flex;align-items:center;gap:8px;min-height:43px;padding:7px 11px}.side+.side{border-top:1px solid #edf1ea}.side.winner{background:#f3f9df}.side-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.88rem;font-weight:650}.side.muted .side-name{color:#9ba99e;font-weight:500}.score{width:38px!important;height:30px;padding:3px!important;text-align:center;border-radius:6px!important;background:white!important;font-size:.86rem}.match-actions{padding:7px 10px;border-top:1px solid #edf1ea;background:#fafcf8}.save-score{border:0;background:transparent;color:#346e4a;font-size:.77rem;font-weight:800;padding:4px}.save-score:hover{text-decoration:underline}.message{font-size:.84rem;min-height:20px;color:#aa4938;margin:9px 0 0}.empty{text-align:center;max-width:400px;margin:60px auto;color:#6c8071}.empty-icon{width:65px;height:65px;border-radius:16px;background:#e9f4d1;display:grid;place-items:center;color:#204d32;font-size:2rem;margin:0 auto 17px}.empty h3{color:#183527;font-size:1.23rem;margin:0}.empty p{margin:8px 0}.champion{margin:0 25px 25px;padding:15px 17px;background:#eaf5d1;border-radius:11px;color:#244e30;font-weight:800}.small-note{padding:0 25px 20px;color:#78887c;font-size:.82rem}.toast{position:fixed;bottom:20px;right:20px;padding:12px 17px;background:#173a29;color:white;border-radius:10px;box-shadow:0 10px 30px #0002;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:22px}.sidebar section+section{border-top:0;border-left:1px solid #edf0e8;margin:0;padding:0 0 0 22px}}@media(max-width:600px){header{padding:8px 10px}main{padding-top:25px}.sidebar{display:block}.sidebar section+section{border-top:1px solid #edf0e8;border-left:0;margin-top:25px;padding:24px 0 0}.toolbar{padding:20px}.bracket-wrap{padding:20px}.champion{margin:0 20px 20px}.round{width:216px}}
+      select{width:100%;min-height:43px;padding:10px 13px;border:1px solid #d8e1d5;border-radius:10px;background:#fcfdfb;color:#17251e;font:inherit}
+      select:focus-visible{outline:3px solid #49976955;outline-offset:2px}
+      .pool-view{max-width:100%}.pool-view h3,.playoff-title{font-size:1.1rem;letter-spacing:-.03em;margin:0 0 8px}.pool-help{color:#647769;font-size:.88rem;margin:0 0 18px}.standings-scroll{overflow-x:auto;margin:0 0 26px}.standings{width:100%;border-collapse:collapse;min-width:440px;font-size:.88rem}.standings th,.standings td{text-align:left;padding:10px 12px;border-bottom:1px solid #e7eee5}.standings th{background:#f2f7ee;color:#496b52;font-size:.76rem;text-transform:uppercase;letter-spacing:.05em}.standings tr.qualifier td:first-child{color:#2d6b3b;font-weight:800}.pool-round{margin:0 0 23px}.pool-round h4{margin:0 0 10px;color:#526c58;font-size:.85rem}.pool-round-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}.pool-round .match{max-width:360px}.playoff-title{margin:30px 0 18px}.pool-view+.bracket{margin-top:10px}
+    </style> -->
+  </head>
+  <body>
+    <header> <img
+        class="brand-logo"
+        src="transparent-logo.png"
+        alt="Isabel Dinker’s Club logo"/>
+      </div>
+
+      <div class="header-title">
+          <h1> PLAY. CONNECT. ELEVATE.</h1>
+      </div>
+
+      
+      </header>
+
+      <!-- <span class="header-note">Pickleball tournament manager</span> -->
+    <main>
+      <div class="title-row"><div><p class="eyebrow"> </p><h1 id="displayName"> </h1><p class="sub">I DON'T CARE</p></div><span class="pill" id="status">Setup in progress</span></div>
+      <div class="layout"><aside class="panel sidebar">
+        <section><div class="section-heading"><h2>Brackets</h2><span class="count" id="bracketCount">1 bracket</span></div><label class="label" for="bracketSelect">Current bracket</label><select id="bracketSelect" aria-label="Current bracket"></select><form id="newBracketForm"><label class="label" for="newBracketName">New bracket name</label><input id="newBracketName" type="text" maxlength="60" placeholder="e.g. Mixed doubles" required><button class="btn full btn btn-secondary px-3" type="submit">+ Create bracket</button></form><p class="message" id="bracketMessage" role="alert"></p><button class="btn full btn btn-secondary px-3" id="deleteBracket" type="button">Delete current bracket</button></section>
+        <section><div class="section-heading"><h2>Tournament</h2></div><label class="label" for="tournamentName">Bracket name</label><input id="tournamentName" type="text" maxlength="60" value="Saturday Open"><label class="label" for="formatSelect">Format</label><select id="formatSelect"><option value="single">Single elimination</option><option value="round-robin">Single round robin + single elimination</option></select><p class="hint" id="formatHint">One winning team per match.</p></section>
+        <section><div class="section-heading"><h2>Teams</h2><span class="count" id="teamCount">0 teams</span></div><form id="addForm"><label class="label" for="teamInput">Team or player name</label><input id="teamInput" type="text" maxlength="45" placeholder="e.g. Court Kings" autocomplete="off" required><button class="btn full" type="submit">+ Add team</button></form><p class="message" id="formMessage" role="alert"></p><ul class="teams" id="teamList"></ul><button class="btn full btn btn-primary rounded-pill px-3" id="generate" type="button">Generate bracket</button><p class="hint">Add 2–16 teams. Empty slots receive an automatic bye.</p></section>
+      </aside><section class="panel main-panel" aria-label="Tournament bracket"><div class="toolbar"><div><h2>Bracket</h2><p id="bracketSummary">Add teams to get started.</p></div><div class="toolbar-actions"><button class="btn btn-dark" id="startPlayoffs" type="button" hidden>Start elimination</button><button class="btn full btn btn-secondary rounded-pill px-3" id="reset" type="button">Reset current bracket</button></div></div><div class="bracket-wrap" id="bracketArea"></div><div id="champion"></div><div class="small-note">Each bracket and its scores are saved on this device.</div></section></div>
+    </main>
+    <!-- <footer class="site-footer">
+      <p>
+        © <span id="copyrightYear">2026</span>
+        Isabel Dinker’s Club. All rights reserved.
+      </p>
+      <div  class="footer-social">
+        <span>Official page of IDC</span>
+        <a
+          class="facebook-link"
+          href="https://www.facebook.com/profile.php?id=61591584943861"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          
+        >f</a>
+      </div>
+    </footer> -->
+
+     <div class="container">
+      <footer class="py-3 my-4">
+        <!-- <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+          </li>
+        </ul> -->
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 text-body-secondary">
+          <span>&copy; Isabel Dinker’s Club. All rights reserved.</span>
+          <span aria-hidden="true">|</span>
+          <a href="privacy-policy.html" class="link-secondary">Privacy Policy</a>
+        </div>
+      </footer>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="appnew.js" defer></script>
+  </body>
+</html>

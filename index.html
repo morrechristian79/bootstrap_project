@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="icon" type="idc_logo2.png" href="images/myname.png">
+    <title>Christian Morre</title>
+    
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .portfolio-logo {
+      display: block;
+      width: auto;
+      height: 48px;
+      max-width: 180px;
+      object-fit: contain;
+    }
+
+    #quick-links a {
+      text-decoration: none;
+    }
+    #quick-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-item img {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container justify-content-center">
+      <!-- <a class="navbar-brand fw-bold" href="#home">My Portfolio</a> -->
+              <img
+                  src="images/myname.png"
+                  alt="Christian Morre"
+                  class="portfolio-logo"
+                />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMenu"
+        aria-controls="navbarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse flex-lg-grow-0" id="navbarMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#quick-links">Quick Links</a></li> -->
+                  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#quick-links">Quick Links</a></li>
+            <li><a class="dropdown-item" href="#contact">Contact</a></li>
+          </ul>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Photo Carousel -->
+  <section id="home" aria-label="Featured photos">
+    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#portfolioCarousel"
+                data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/mebanner.png"
+               class="d-block w-100" alt="Laptop on a desk">
+          <div class="carousel-caption">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I build responsive websites and web applications.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://picsum.photos/id/180/1600/800"
+               class="d-block w-100" alt="Workspace with a laptop">
+          <div class="carousel-caption">
+            <h2>Web Design</h2>
+            <p>Clean layouts that work on desktop and mobile.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://picsum.photos/id/160/1600/800"
+               class="d-block w-100" alt="Computer workspace">
+          <div class="carousel-caption">
+            <h2>Web Development</h2>
+            <p>Turning ideas into working websites.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://picsum.photos/id/48/1600/800"
+               class="d-block w-100" alt="Laptop and accessories">
+          <div class="carousel-caption">
+            <h2>My Projects</h2>
+            <p>Explore some of the things I have created.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button"
+              data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button"
+              data-bs-target="#portfolioCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container py-5">
+    <h2 class="text-center mb-4">About Me</h2>
+    <p class="lead text-center">
+      Hello! I'm Christian Morre, an aspiring Full Stack Web Developer with a passion for building modern, user-friendly web applications.
+      I am currently developing a variety of projects that will serve as my professional portfolio, allowing me to continuously expand my skills in both front-end and back-end development.
+      Prior to pursuing web development, I worked as a Senior Systems Administrator and currently serve as a Service Delivery Coordinator for a US-based IT firm. My background in IT operations, systems management, and service delivery has provided me with a strong technical foundation and a deep understanding of business and technology requirements.
+      As I explore a career transition, I have chosen Full Stack Web Development as my preferred path, driven by my passion for creating innovative digital solutions. To support this journey, I am actively working on various web development projects, continuously learning new technologies, and gaining hands-on experience in designing and building websites and web applications.
+      I am excited to grow as a developer and contribute to meaningful projects that create value for businesses and users alike.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">My Projects</h2>
+
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5 text-center">Tournament Manager</h3>
+              <img src="images/photo1.jpg" class="img-fluid" alt="Project 1">
+              <p class="card-text">I created a Tournament Management Website for pickleball tournaments that streamlines player registration, match scheduling, bracket generation, and score tracking through a simple and user-friendly platform. And currently finishing it.      </p>
+              <a href="Pickleball site/index.html" target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary d-block mx-auto" style="width: fit-content;">
+                See Project
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5 text-center">Tools Inventory</h3>
+              <img src="images/Tools_photo.jpg" class="img-fluid" alt="Project 2">
+              <p class="card-text">Currently developing a Tools Inventory Website for our contracting company. The system stores and manages tool records in a centralized database, enabling efficient tracking and monitoring of inventory. And currently finishing it.</p>
+              <a href="Tools Inventory/toolsinventory.html" target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary d-block mx-auto" style="width: fit-content;">
+                See Project
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h3 class="card-title h5 text-center">Simple Online Store</h3>
+              <img src="images/store.jpg" class="img-fluid" alt="Project 3">
+              <p class="card-text">Currently developing our company website, which will serve as a platform for showcasing our portfolio. This will enable prospective clients to conveniently learn about our company, explore our capabilities for future business opportunities. And currently finishing it.</p>
+              <a href="Store/index.html" target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary d-block mx-auto" style="width: fit-content;">
+                See Project
+              </a>            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+<section id="video" class="container py-5">
+  <h2 class="text-center mb-4">Featured Video</h2>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/6m7V-v_UX10?si=gMzxYcK-bhxoeTKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Skills -->
+  <section id="skills" class="container py-5">
+    <h2 class="text-center mb-4">My Skills</h2>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="d-flex justify-content-between">
+          <span>HTML</span><span>90%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex justify-content-between">
+          <span>CSS</span><span>80%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+          <div class="progress-bar bg-info bg-secondary progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex justify-content-between">
+          <span>JavaScript</span><span>85%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+          <div class="progress-bar bg-warning bg-secondary progress-bar-striped progress-bar-animated" style="width: 85%"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex justify-content-between">
+          <span>React</span><span>83%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+          <div class="progress-bar bg-success bg-secondary progress-bar-striped progress-bar-animated" style="width: 83%"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex justify-content-between">
+          <span>Next.js</span><span>80%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+          <div class="progress-bar bg-dark bg-secondary progress-bar-striped progress-bar-animated" style="width: 80%"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="d-flex justify-content-between">
+          <span>Node.js</span><span>79%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="height: 20px">
+          <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" style="width: 79%"></div>
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+<section id="contact" class="bg-dark text-white py-5">
+  <div class="container">
+    <h2 class="text-center mb-3">Contact Me</h2>
+    <p class="text-center mb-4">Have a project or question? Send me a message.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <form id="contactForm"
+            class="bg-secondary text-white border border-light rounded-3 p-4 shadow">
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="contactName"
+                   name="name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="contactEmail"
+                   name="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="contactNumber" class="form-label">Contact number</label>
+            <input type="tel" class="form-control" id="contactNumber"
+                   name="phone" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="contactMessage" class="form-label">Message</label>
+            <textarea class="form-control" id="contactMessage"
+                      name="message" rows="5" required></textarea>
+          </div class=>
+
+          <div class="text-center">
+          <button type="submit" class="btn btn-primary w-50">
+            Send Message
+          </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Links -->
+<section id="quick-links" class="bg-danger py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Quick Links</h2>
+
+    <div class="row g-4 text-center">
+      <div class="col-sm-6 col-lg-3">
+        <h3 class="h5 mb-3">About My Work</h3>
+        <a href="#about" class="d-block mb-2">About Me</a>
+        <a href="#skills" class="d-block">My Skills</a>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <h3 class="h5 mb-3">Featured Projects</h3>
+        <a href="../Pickleball site/index.html" class="d-block mb-2"
+           target="_blank" rel="noopener noreferrer">Tournament Manager</a>
+        <a href="../toolsinventory.html" class="d-block"
+           target="_blank" rel="noopener noreferrer">Tools Inventory</a>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <h3 class="h5 mb-3">Explore More</h3>
+        <a href="#projects" class="d-block mb-2">All Projects</a>
+        <a href="#video" class="d-block">Featured Video</a>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <h3 class="h5 mb-3">Connect</h3>
+        <a href="#contact" class="d-block mb-2">Contact Me</a>
+        <a href="#home" class="d-block">Back to Top</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="mb-0">&copy; 2026 Christian Morre. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
